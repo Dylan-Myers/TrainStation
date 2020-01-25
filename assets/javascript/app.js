@@ -79,8 +79,40 @@ database.ref().on("child_added", function(childSnapshot){
     console.log(newFreq);
     console.log(newPlat);
 
-    //momemnt js things (still figuring this out)
+    //momemnt js things (still figuring this out docs are confusing i dont understand any of this)
+    // var firstTime = 0;
 
+    // var firstTimeConverted = moment(firstTime, "HHH:mm").subtract(1, "years");
+
+    // var currentTime= moment().format("HH:mm");
+
+    // var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    // console.log("DIFFERNCE IN TIME: " + diffTime);
+
+    // var tRemainder = diffTime % freq;
+    // console.log(tRemainder);
+
+    // var tMinutesTillTrain = freq - tRemainder;
+    // console.log("Minutes Till Train: " + tMinutesTillTrain);
+
+    // var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+    // var arrivalD= (newDeparture).format("HH:mm");
+    // console.log(arrivalD);
+    // console.log(nextTrain);
+
+    // var minAway= moment(nextTrain).diff(moment(), "minutes");
+    // console.log("Min away: " +tMinutesTillTrain)
+
+    // create the new row
+    var newRow = $("<tr>").append(
+        $("<td>").text(newTrain),
+        $("<td>").text(newLine),
+        $("<td>").text(newDestination),
+        $("<td>").text(newDeparture),
+        $("<td>").text(newFreq),
+        $("<td>").text(""),
+        $("<td>").text(newPlat)
+    );
 
     //appending to table
     $("#train-table > tbody").append(newRow);
